@@ -5,7 +5,14 @@
 #           This script was created by Dawid Kolodziej for Tech Support use only  #
 #                                                                                 #
 ###################################################################################
+import os
 
+path = ["dijfolder", "htmlfolder"]
+
+for z in path:
+    doesExist = os.path.exists(z)
+    if not doesExist:
+        os.mkdir(z)
 DIJ = 5 # enter number of DIJ files you would like to process in EODeliver
 files = 5 # enter number of file per DIJ file you would like to process in EODeliver
 
