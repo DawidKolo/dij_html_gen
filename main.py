@@ -1,3 +1,11 @@
+###################################################################################
+#                                                                                 #
+#           This is HTML and DIJ files generator.                                 #
+#                                                                                 #
+#           This script was created by Dawid Kolodziej for Tech Support use only  #
+#                                                                                 #
+###################################################################################
+
 DIJ = 5 # enter number of DIJ files you would like to process in EODeliver
 files = 5 # enter number of file per DIJ file you would like to process in EODeliver
 
@@ -6,7 +14,7 @@ files = 5 # enter number of file per DIJ file you would like to process in EODel
 for x in range(1,DIJ+1):
     ID = f"25AKKX{x:04d}XXXXXXXXXXXXXXXXXX"  # Enter some custom string of characters. This will be part of unique docInstanceID number.
     for i in range(1,files+1):
-        filename = f"u:\\kopiowanie\\htmlfolder\\file{x}_000{i:04d}.html"
+        filename = f".\\htmlfolder\\file{x}_000{i:04d}.html"
         print(filename)
         with open(filename, "w") as file:
             file.write('''"<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -49,7 +57,7 @@ style="background-color:#FFFFFF; margin-top:0; margin-left:0; margin-bottom:0; m
 
 
 
-    filename = f"u:\\kopiowanie\\dijfolder\\file{x}.DIJ"
+    filename = f".\\dijfolder\\file{x}.DIJ"
     print(filename)
 
     with open(filename, "w") as file:
