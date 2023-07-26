@@ -1,11 +1,12 @@
+DIJ = 5 # enter number of DIJ files you would like to process in EODeliver
+files = 5 # enter number of file per DIJ file you would like to process in EODeliver
 
-folder = "test11"
-ID = "25AKKXXXXXXXXXXXXXXXXXXXXXXX"
 
-def HTML():
 
-    for i in range(1,5):
-        filename = f"u:\\kopiowanie\\{folder}\\{folder}_000{i:04d}.html"
+for x in range(1,DIJ+1):
+    ID = f"25AKKX{x:04d}XXXXXXXXXXXXXXXXXX"  # Enter some custom string of characters. This will be part of unique docInstanceID number.
+    for i in range(1,files+1):
+        filename = f"u:\\kopiowanie\\htmlfolder\\file{x}_000{i:04d}.html"
         print(filename)
         with open(filename, "w") as file:
             file.write('''"<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -46,9 +47,10 @@ style="background-color:#FFFFFF; margin-top:0; margin-left:0; margin-bottom:0; m
 
 
 
-def DIJ():
 
-    filename = f"u:\\kopiowanie\\{folder}\\{folder}.DIJ"
+
+    filename = f"u:\\kopiowanie\\dijfolder\\file{x}.DIJ"
+    print(filename)
 
     with open(filename, "w") as file:
         file.write('''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -59,7 +61,7 @@ def DIJ():
 <platform>EngageOne</platform>
 <Version major="4" minor="3"/>
 </jobdata>''')
-        for i in range(1,5):
+        for i in range(1,files+1):
             file.write('''<document docID="''' +str(i)+ f'''" docInstanceID="'''+ str(ID) + f"{i:04d}" + '''">
 <DDSDocValue name="Email" type="text" len="22">user1@test.com</DDSDocValue>
 <DDSDocValue name="From" type="text" len="22">NOREPLY@AGOSDUCATO.NET</DDSDocValue>
@@ -74,6 +76,5 @@ def DIJ():
 
 
 
-HTML()
-DIJ()
+
 
