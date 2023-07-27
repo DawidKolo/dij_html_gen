@@ -6,6 +6,7 @@
 #                                                                                 #
 ###################################################################################
 import os
+import configparser
 
 path = ["dijfolder", "htmlfolder"]
 
@@ -13,17 +14,18 @@ for z in path:
     doesExist = os.path.exists(z)
     if not doesExist:
         os.mkdir(z)
+config = configparser.ConfigParser()
+config.read('test.txt')
+
+
+DIJ = config.get('numbers', 'DIJ')
+files = config.get('numbers', 'files')
 
 
 
-DIJ = 1 # enter number of DIJ files you would like to process in EODeliver
-files = 1 # enter number of file per DIJ file you would like to process in EODeliver (max 9998)
-
-
-
-for x in range(1,DIJ+1):
+for x in range(1,int(DIJ)+1):
     ID = f"25AKKX{x:04d}XXXXXXXXXXXXXXXXXX"  # Replace some X's with custom string of characters. This will be part of unique docInstanceID number.
-    for i in range(1,files+1):
+    for i in range(1,int(files)+1):
         filename = f".\\htmlfolder\\file{x}_000{i:04d}.html"
         print(filename)
         with open(filename, "w") as file:
@@ -79,7 +81,7 @@ style="background-color:#FFFFFF; margin-top:0; margin-left:0; margin-bottom:0; m
 <platform>EngageOne</platform>
 <Version major="4" minor="3"/>
 </jobdata>''')
-        for i in range(1,files+1):
+        for i in range(1,int(files)+1):
             file.write('''<document docID="''' +str(i)+ f'''" docInstanceID="'''+ str(ID) + f"{i:04d}" + '''">
 <DDSDocValue name="Email" type="text" len="14">user1@test.com</DDSDocValue>
 <DDSDocValue name="From" type="text" len="16">NOREPLY@TEST.NET</DDSDocValue>
