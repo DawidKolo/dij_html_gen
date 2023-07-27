@@ -1,4 +1,14 @@
+;******************************************************************************************************************
+;*                      Please replace the values of the variables.                                               *
+;*       DIJ - integer                                                                                            *
+;*       files - integer up to 9998                                                                               *
+;*       Prefix - string, please note it will be part of a unique docInstanceID number.                           *
+;*                These alphanumeric strings are used by EODeliver to identify each email that was already sent.  *
+;*                EODeliver will not allow you sent the email with certain docInstanceId twice.                   *
+;*                If you need to generate new set of files, please change at least one character of the prefix.   *
+;******************************************************************************************************************
 
 [numbers]
 DIJ = 5
 files = 1
+prefix = DAWIDX

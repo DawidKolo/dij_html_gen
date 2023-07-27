@@ -20,11 +20,11 @@ config.read('test.txt')
 
 DIJ = config.get('numbers', 'DIJ')
 files = config.get('numbers', 'files')
-
+prefix = config.get('numbers', 'prefix')
 
 
 for x in range(1,int(DIJ)+1):
-    ID = f"25AKKX{x:04d}XXXXXXXXXXXXXXXXXX"  # Replace some X's with custom string of characters. This will be part of unique docInstanceID number.
+    ID = f"{prefix}{x:04d}XXXXXXXXXXXXXXXXXX"
     for i in range(1,int(files)+1):
         filename = f".\\htmlfolder\\file{x}_000{i:04d}.html"
         print(filename)
