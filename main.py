@@ -14,18 +14,17 @@ for z in path:
     doesExist = os.path.exists(z)
     if not doesExist:
         os.mkdir(z)
-config = configparser.ConfigParser()
-config.read('test.txt')
 
+config = configparser.ConfigParser()
+config.read('config.txt')
 
 DIJ = config.get('numbers', 'DIJ')
 files = config.get('numbers', 'files')
 prefix = config.get('numbers', 'prefix')
 
-
-for x in range(1,int(DIJ)+1):
+for x in range(1, int(DIJ) + 1):
     ID = f"{prefix}{x:04d}XXXXXXXXXXXXXXXXXX"
-    for i in range(1,int(files)+1):
+    for i in range(1, int(files) + 1):
         filename = f".\\htmlfolder\\file{x}_000{i:04d}.html"
         print(filename)
         with open(filename, "w") as file:
@@ -34,7 +33,7 @@ for x in range(1,int(DIJ)+1):
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<!-- '''+str(ID) + f"{i:04d}" ''' -->
+<!-- ''' + str(ID) + f"{i:04d}" ''' -->
 <title>dummy html</title>
 <style type="text/css">a:link {color:#FFFFFF} a:visited {color:#FFFFFF} a:active {color:#FFFFFF}
 .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td {line-height: 100%}
@@ -65,10 +64,6 @@ style="background-color:#FFFFFF; margin-top:0; margin-left:0; margin-bottom:0; m
 </body>
 </html>"''')
 
-
-
-
-
     filename = f".\\dijfolder\\file{x}.DIJ"
     print(filename)
 
@@ -81,8 +76,8 @@ style="background-color:#FFFFFF; margin-top:0; margin-left:0; margin-bottom:0; m
 <platform>EngageOne</platform>
 <Version major="4" minor="3"/>
 </jobdata>''')
-        for i in range(1,int(files)+1):
-            file.write('''<document docID="''' +str(i)+ f'''" docInstanceID="'''+ str(ID) + f"{i:04d}" + '''">
+        for i in range(1, int(files) + 1):
+            file.write('''<document docID="''' + str(i) + f'''" docInstanceID="''' + str(ID) + f"{i:04d}" + '''">
 <DDSDocValue name="Email" type="text" len="14">user1@test.com</DDSDocValue>
 <DDSDocValue name="From" type="text" len="16">NOREPLY@TEST.NET</DDSDocValue>
 <DDSDocValue name="Subject" type="text" len="64">Important communication relating to the Precisely product report</DDSDocValue>
@@ -93,8 +88,3 @@ style="background-color:#FFFFFF; margin-top:0; margin-left:0; margin-bottom:0; m
 <DDSDocValue name="ARCHIVE_INDEX" type="text" len="121">|dummy|68272764|0|20876632|NAME|SURNAME|2023-02-01|ACCXXX97B04F839E|AMBP|23/05/2023|03:00:28 |||user2@test.com|</DDSDocValue>
 </document>''')
         file.write('''</eGAD>''')
-
-
-
-
-
