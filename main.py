@@ -23,11 +23,8 @@ DIJ = config.get('numbers', 'DIJ')
 files = config.get('numbers', 'files')
 prefix = config.get('prefix', 'prefix')
 
-
-
 htmlconfig = configparser.RawConfigParser()
 htmlconfig.read('html_body.txt')
-
 
 for x in range(1, int(DIJ) + 1):
     ID = f"{prefix}{x:04d}XXXXXXXXXXXXXXXXXX"
@@ -47,9 +44,7 @@ for x in range(1, int(DIJ) + 1):
     dijconfig = configparser.RawConfigParser()
     dijconfig.read("dij.txt")
 
-
     documentID = '''<document docID="''' + str(i) + f'''" docInstanceID="''' + str(ID) + f"{i:04d}" + '''">'''
-
 
     with open(filename, "w") as file:
         text = dijconfig.get('DIJ', 'text')
@@ -60,13 +55,10 @@ for x in range(1, int(DIJ) + 1):
             file.write(DIJdoc)
         file.write('''</eGAD>''')
 
-
 hval = '0x' + prefix
-convert_hval = literal_eval(hval)+1
+convert_hval = literal_eval(hval) + 1
 hex_convert_hval = hex(convert_hval)
-to_file = hex_convert_hval.replace('0x', '')
-a = to_file
-
+a = hex_convert_hval.replace('0x', '')
 
 config.set('prefix', 'prefix', a)
 with open('config.txt', 'w') as configfile:
