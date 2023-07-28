@@ -7,6 +7,7 @@
 ###################################################################################
 import os
 import configparser
+from ast import literal_eval
 
 path = ["dijfolder", "htmlfolder"]
 
@@ -20,7 +21,7 @@ config.read('config.txt')
 
 DIJ = config.get('numbers', 'DIJ')
 files = config.get('numbers', 'files')
-prefix = config.get('numbers', 'prefix')
+prefix = config.get('prefix', 'prefix')
 
 for x in range(1, int(DIJ) + 1):
     ID = f"{prefix}{x:04d}XXXXXXXXXXXXXXXXXX"
@@ -88,3 +89,20 @@ style="background-color:#FFFFFF; margin-top:0; margin-left:0; margin-bottom:0; m
 <DDSDocValue name="ARCHIVE_INDEX" type="text" len="121">|dummy|68272764|0|20876632|NAME|SURNAME|2023-02-01|ACCXXX97B04F839E|AMBP|23/05/2023|03:00:28 |||user2@test.com|</DDSDocValue>
 </document>''')
         file.write('''</eGAD>''')
+
+
+hval = '0x' + prefix
+
+convert_hval = literal_eval(hval)+1
+hex_convert_hval = hex(convert_hval)
+print(hex_convert_hval)
+print(type(hex_convert_hval))
+
+to_file = hex_convert_hval.replace('0x', '')
+a = to_file
+print(a)
+
+
+config.set('prefix', 'prefix', a)
+with open('config.txt', 'w') as configfile:
+    config.write(configfile)
