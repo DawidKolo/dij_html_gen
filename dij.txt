@@ -1,0 +1,19 @@
+[DIJ]
+text = <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <!DOCTYPE eGAD SYSTEM "eGAD.Dtd">
+        <eGAD pakUID="8c7b000b9373479dbd57afccba860b00">
+        <jobdata>
+        <datetime>20230523030029</datetime>
+        <platform>EngageOne</platform>
+        <Version major="4" minor="3"/>
+        </jobdata>
+
+document = <DDSDocValue name="Email" type="text" len="14">user1@test.com</DDSDocValue>
+            <DDSDocValue name="From" type="text" len="16">NOREPLY@TEST.NET</DDSDocValue>
+            <DDSDocValue name="Subject" type="text" len="64">Important communication relating to the Precisely product report</DDSDocValue>
+            <AccNo>PRE;0037057626</AccNo>
+            <StmtDate>2023-07-25</StmtDate>
+            <CustData>
+            </CustData>
+            <DDSDocValue name="ARCHIVE_INDEX" type="text" len="121">|dummy|68272764|0|20876632|NAME|SURNAME|2023-02-01|ACCXXX97B04F839E|AMBP|23/05/2023|03:00:28 |||user2@test.com|</DDSDocValue>
+            </document>

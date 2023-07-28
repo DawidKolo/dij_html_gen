@@ -1,0 +1,38 @@
+[htmlbody]
+html_head = <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        <!-- EngageOne Generate Build=6.6.11.4072 Date=23-05-2023 Time=15:00:29 Platform=LINUX -->
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+
+
+html_body = <title>dummy html</title>
+        <style type="text/css">a:link {color:#FFFFFF} a:visited {color:#FFFFFF} a:active {color:#FFFFFF}
+        .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td {line-height: 100%}
+        .ExternalClass {width: 100%;}
+        </style>
+        </head>
+        <body bgcolor="#FFFFFF"
+        style="background-color:#FFFFFF; margin-top:0; margin-left:0; margin-bottom:0; margin-right:0; padding-top:0; padding-left:0; padding-bottom:0; padding-right:0;">
+        <table align="center" cellspacing="0" cellpadding="0" width="794" style="border-collapse:collapse;background-color:#FFFFFF;">
+        <tr style="vertical-align:top;line-height:38px;font-size:38px"><td width="38" height="38"><span style="font-size:1px;line-height:1px;">&nbsp;</span></td><td width="718" height="38"><span style="font-size:1px;line-height:1px;">&nbsp;</span></td><td width="38" height="38"><span style="font-size:1px;line-height:1px;">&nbsp;</span></td></tr>
+        <tr style="vertical-align:top;">
+        <td width="38"><span style="font-size:1px;line-height:1px;">&nbsp;</span></td><td width="718"><div style="line-height:17px;"><span style="color:#000000;font-family:Arial;font-size:15px;">Dear Customer&#44; </span></div>
+        <div style="font-size:12px;line-height:12px;">&nbsp;</div>
+        <div style="line-height:17px;text-align:justify;"><span style="color:#000000;font-family:Arial;font-size:15px;">This very important email was sent by EODeliver </span><span style="color:#000000;font-family:Arial;font-size:15px;text-decoration:underline;">Customer's Corner</span><span style="color:#000000;font-family:Arial;font-size:15px;">&#44; to the Section &#8220;Periodic communications&#8221; of each product. </span></div>
+        <div style="font-size:12px;line-height:12px;">&nbsp;</div>
+        <div style="line-height:17px;text-align:justify;"><span style="color:#000000;font-family:Arial;font-size:15px;">We invite you to read it and we thank you for choosing our online services&#44;  reminding you of the possibility of requesting a change in the method of sending communications at any time by contacting us at Customer Service&#47;by entering the &#8220;Communications Management Section&#8221;. </span></div>
+        <div style="font-size:12px;line-height:12px;">&nbsp;</div>
+        <div style="line-height:17px;"><span style="color:#000000;font-family:Arial;font-size:15px;">Customer Service </span></div>
+        <div style="line-height:17px;"><span style="color:#000000;font-family:Arial;font-size:15px;">Precisely Software</span></div>
+        <div style="font-size:12px;line-height:12px;">&nbsp;</div>
+        <div style="line-height:17px;text-align:justify;"><span style="color:#000000;font-family:Arial;font-size:11px;">This e-mail is sent automatically and replies cannot be read. For each information request, do not use the &#34;reply&#34;&#44; but contact us through the dedicated form available in the Contact section of the Precisely website.</span></div>
+        <div style="font-size:12px;line-height:12px;">&nbsp;</div>
+        <div style="line-height:17px;"><span style="color:#000000;font-family:Arial;font-size:15px;">&nbsp;</span></div>
+        </td>
+        <td width="38"><span style="font-size:1px;line-height:1px;">&nbsp;</span></td></tr>
+        <tr style="vertical-align:top;line-height:65px;font-size:65px"><td width="794" colspan="3" height="65"><span style="font-size:1px;line-height:1px;">&nbsp;</span></td></tr>
+        </table>
+        </body>
+        </html>
