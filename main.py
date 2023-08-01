@@ -9,6 +9,8 @@ import os
 import configparser
 from ast import literal_eval
 
+
+# Creating folder for DIJ and HTML files
 path = ["dijfolder", "htmlfolder"]
 
 for z in path:
@@ -16,6 +18,8 @@ for z in path:
     if not doesExist:
         os.mkdir(z)
 
+
+# import user settings and prefix from the config.txt file
 config = configparser.ConfigParser()
 config.read('config.txt')
 
@@ -23,6 +27,8 @@ DIJ = config.get('numbers', 'DIJ')
 files = config.get('numbers', 'files')
 prefix = config.get('prefix', 'prefix')
 
+
+# import HTML code from html_body.txt file and creating HTML files
 htmlconfig = configparser.RawConfigParser()
 htmlconfig.read('html_body.txt')
 
@@ -39,6 +45,8 @@ for x in range(1, int(DIJ) + 1):
         with open(filename, "w") as file:
             file.write(html)
 
+
+# import a code from the DIJ.txt file and creating required DIJ files
     filename = f".\\dijfolder\\file{x}.DIJ"
 
     dijconfig = configparser.RawConfigParser()
@@ -55,6 +63,8 @@ for x in range(1, int(DIJ) + 1):
             file.write(DIJdoc)
         file.write('''</eGAD>''')
 
+
+# creating a new prefix and writing it to the config.txt file
 hval = '0x' + prefix
 convert_hval = literal_eval(hval) + 1
 hex_convert_hval = hex(convert_hval)
