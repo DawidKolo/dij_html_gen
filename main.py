@@ -10,15 +10,6 @@ import configparser
 from ast import literal_eval
 
 
-# Creating folder for DIJ and HTML files
-path = ["dijfolder", "htmlfolder"]
-
-for z in path:
-    doesExist = os.path.exists(z)
-    if not doesExist:
-        os.mkdir(z)
-
-
 # import user settings and prefix from the config.txt file
 config = configparser.ConfigParser()
 config.read('config.txt')
@@ -27,6 +18,27 @@ DIJ = config.get('numbers', 'DIJ')
 files = config.get('numbers', 'files')
 prefix = config.get('prefix', 'prefix')
 ballast = config.get('numbers', 'html_size')
+
+
+if not DIJ.isnumeric():
+    print("The given value id not a number")
+    quit(1)
+if not files.isnumeric() or int(files) > 9998:
+    print("The given value is not a number or the given number is greater than 9998")
+    quit(1)
+if not ballast.isnumeric():
+    print("The given value is not a number")
+    quit(1)
+
+
+# Creating folders for DIJ and HTML files
+path = ["dijfolder", "htmlfolder"]
+
+for z in path:
+    doesExist = os.path.exists(z)
+    if not doesExist:
+        os.mkdir(z)
+
 
 # import HTML code from html_body.txt file and creating HTML files
 htmlconfig = configparser.RawConfigParser()
