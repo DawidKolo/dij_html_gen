@@ -21,7 +21,7 @@ ballast = config.get('numbers', 'html_size')
 
 
 if not DIJ.isnumeric():
-    print("The given value id not a number")
+    print("The given value is not a number")
     quit(1)
 if not files.isnumeric() or int(files) > 9998:
     print("The given value is not a number or the given number is greater than 9998")
