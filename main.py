@@ -26,11 +26,18 @@ config.read('config.txt')
 DIJ = config.get('numbers', 'DIJ')
 files = config.get('numbers', 'files')
 prefix = config.get('prefix', 'prefix')
-
+ballast = config.get('numbers', 'html_size')
 
 # import HTML code from html_body.txt file and creating HTML files
 htmlconfig = configparser.RawConfigParser()
 htmlconfig.read('html_body.txt')
+
+# import commenting html code that increases the size of the HTML file
+html_ballast = []
+for s in range(1, int(ballast)-3):
+    html_ballast.append(htmlconfig.get('htmlbody', 'ballast'))
+new_ballast = ''.join(html_ballast)
+
 
 for x in range(1, int(DIJ) + 1):
     ID = f"{prefix}{x:04d}XXXXXXXXXXXXXXXXXX"
@@ -40,7 +47,7 @@ for x in range(1, int(DIJ) + 1):
         link = '''<!-- ''' + str(ID) + f"{i:04d}" ''' -->'''
         html_body = htmlconfig.get('htmlbody', 'html_body')
         filename = f".\\htmlfolder\\file{x}_000{i:04d}.html"
-        html = html_head + "\n" + link + "\n" + html_body
+        html = html_head + "\n" + link + "\n" + html_body + "\n" + new_ballast
 
         with open(filename, "w") as file:
             file.write(html)
