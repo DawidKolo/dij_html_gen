@@ -19,7 +19,7 @@ files = config.get('numbers', 'files')
 prefix = config.get('prefix', 'prefix')
 ballast = config.get('numbers', 'html_size')
 
-
+# checking if required values are correct
 if not DIJ.isnumeric():
     print("The given value is not a number")
     quit(1)
