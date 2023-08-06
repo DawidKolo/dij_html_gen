@@ -32,7 +32,7 @@ if not ballast.isnumeric():
 
 
 # Creating folders for DIJ and HTML files
-path = ["dijfolder", "htmlfolder"]
+path = ["dijfolder-"+str(prefix), "htmlfolder-"+str(prefix)]
 
 for z in path:
     doesExist = os.path.exists(z)
@@ -58,7 +58,7 @@ for x in range(1, int(DIJ) + 1):
         html_head = htmlconfig.get('htmlbody', 'html_head')
         link = '''<!-- ''' + str(ID) + f"{i:04d}" ''' -->'''
         html_body = htmlconfig.get('htmlbody', 'html_body')
-        filename = f".\\htmlfolder\\file{x}_000{i:04d}.html"
+        filename = f".\\htmlfolder-{prefix}\\file{prefix}{x}_000{i:04d}.html"
         html = html_head + "\n" + link + "\n" + html_body + "\n" + new_ballast
 
         with open(filename, "w") as file:
@@ -66,7 +66,7 @@ for x in range(1, int(DIJ) + 1):
 
 
 # import a code from the DIJ.txt file and creating required DIJ files
-    filename = f".\\dijfolder\\file{x}.DIJ"
+    filename = f".\\dijfolder-{prefix}\\file{prefix}{x}.DIJ"
 
     dijconfig = configparser.RawConfigParser()
     dijconfig.read("dij.txt")
