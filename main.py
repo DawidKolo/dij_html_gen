@@ -36,7 +36,7 @@ if not all(c in string.hexdigits for c in prefix):
     quit(1)
 
 # Creating folders for DIJ and HTML files
-path = ["dijfolder-"+str(prefix), "htmlfolder-"+str(prefix)]
+path = ["dijfolder-"+prefix, "htmlfolder-"+prefix]
 
 for z in path:
     doesExist = os.path.exists(z)
