@@ -10,7 +10,6 @@ import configparser
 from ast import literal_eval
 import string
 
-
 # import user settings and prefix from the config.txt file
 config = configparser.ConfigParser()
 config.read('config.txt')
@@ -19,7 +18,6 @@ DIJ = config.get('numbers', 'DIJ')
 files = config.get('numbers', 'files')
 prefix = config.get('prefix', 'prefix')
 ballast = config.get('numbers', 'html_size')
-
 
 # checking if required values are correct
 if not DIJ.isnumeric():
@@ -32,17 +30,17 @@ if not ballast.isnumeric():
     print("The given value is not a number")
     quit(1)
 if not all(c in string.hexdigits for c in prefix):
-    print("Prefix is incorrect. Please ensure that all characters from prefix string represent hexadecimal digits (0-9, a-f)")
+    print(
+        "Prefix is incorrect. Please ensure that all characters from prefix string represent hexadecimal digits (0-9, a-f)")
     quit(1)
 
 # Creating folders for DIJ and HTML files
-path = ["dijfolder-"+prefix, "htmlfolder-"+prefix]
+path = ["dijfolder-" + prefix, "htmlfolder-" + prefix]
 
 for z in path:
     doesExist = os.path.exists(z)
     if not doesExist:
         os.mkdir(z)
-
 
 # import HTML code from html_body.txt file and creating HTML files
 htmlconfig = configparser.RawConfigParser()
@@ -50,10 +48,9 @@ htmlconfig.read('html_body.txt')
 
 # import commenting html code that increases the size of the HTML file
 html_ballast = []
-for s in range(1, int(ballast)-3):
+for s in range(1, int(ballast) - 3):
     html_ballast.append(htmlconfig.get('htmlbody', 'ballast'))
 new_ballast = ''.join(html_ballast)
-
 
 for x in range(1, int(DIJ) + 1):
     ID = f"{prefix}{x:04d}XXXXXXXXXXXXXXXXXX"
@@ -68,8 +65,7 @@ for x in range(1, int(DIJ) + 1):
         with open(filename, "w") as file:
             file.write(html)
 
-
-# import a code from the DIJ.txt file and creating required DIJ files
+    # import a code from the DIJ.txt file and creating required DIJ files
     filename = f".\\dijfolder-{prefix}\\file{prefix}{x}.DIJ"
 
     dijconfig = configparser.RawConfigParser()
@@ -85,7 +81,6 @@ for x in range(1, int(DIJ) + 1):
             DIJdoc = documentID + "\n" + document
             file.write(DIJdoc)
         file.write('''</eGAD>''')
-
 
 # creating a new prefix and writing it to the config.txt file
 hval = '0x' + prefix
