@@ -31,7 +31,7 @@ if not files.isnumeric() or int(files) > 9998:
 if not ballast.isnumeric():
     print("The given value is not a number")
     quit(1)
-if not all(c in prefix.hexdigits for c in prefix):
+if not all(c in string.hexdigits for c in prefix):
     print("Prefix is incorrect. Please ensure that all characters from prefix string represent hexadecimal digits (0-9, a-f)")
     quit(1)
 

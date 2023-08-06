@@ -1,8 +1,14 @@
+[README]
+readme = Please enter desired values for the section 'numbers'. The number of DIJ files you want. A number of HTML files
+	you would like to generate is represented in variable 'files'. You can pick the size of each HTML file in KB by
+	assigning value to the 'html_size' variable. The smallest size is 4KB. The Prefix variable is changed automatically
+	and should contain characters from sets (0-9) and (a-f).
+
 [numbers]
 dij = 5
 files = 1
 html_size = 10
 
 [prefix]
-prefix = aaaacf
+prefix = aaaadd
 
