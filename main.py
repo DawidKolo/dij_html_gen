@@ -8,6 +8,7 @@
 import os
 import configparser
 from ast import literal_eval
+import string
 
 
 # import user settings and prefix from the config.txt file
@@ -19,6 +20,7 @@ files = config.get('numbers', 'files')
 prefix = config.get('prefix', 'prefix')
 ballast = config.get('numbers', 'html_size')
 
+
 # checking if required values are correct
 if not DIJ.isnumeric():
     print("The given value is not a number")
@@ -29,7 +31,9 @@ if not files.isnumeric() or int(files) > 9998:
 if not ballast.isnumeric():
     print("The given value is not a number")
     quit(1)
-
+if not all(c in prefix.hexdigits for c in prefix):
+    print("Prefix is incorrect. Please ensure that all characters from prefix string represent hexadecimal digits (0-9, a-f)")
+    quit(1)
 
 # Creating folders for DIJ and HTML files
 path = ["dijfolder-"+str(prefix), "htmlfolder-"+str(prefix)]
